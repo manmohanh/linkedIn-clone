@@ -27,7 +27,7 @@ function App() {
         <Route path="/feed" element={<Feeds />} />
         
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
