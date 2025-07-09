@@ -94,7 +94,9 @@ const Navbar2 = () => {
         </div>
 
         <div className="flex flex-col items-center cursor-pointer">
-          <NotificationsIcon />
+          <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuNhTZJTtkR6b-ADMhmzPvVwaLuLdz273wvQ&s" alt="Profile" className="object-cover h-7 w-7 rounded-full" />
+          </div>
           <div className="text-sm text-gray-500">Me</div>
         </div>
       </div>
