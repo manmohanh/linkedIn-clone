@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../../components/card/card";
 import ProfileCard from "../../components/profile-card/profile-card";
 import VideoCallIcon from "@mui/icons-material/VideoCall";
 import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
 import ArticleIcon from "@mui/icons-material/Article";
 import Advertisement from "../../components/advertisement/advertisement";
+import Post from "../../components/post/post";
+import Modal from "../../components/modal/modal";
+import AddModal from "../../components/add-modal/add-modal";
 
 const Feeds = () => {
+  const [addPostModal, setAddPostModal] = useState(false);
+
   return (
     <div className="px-5 xl:px-50 py-9 flex gap-5 w-full mt-5 bg-gray-100">
       {/* left */}
@@ -47,24 +52,26 @@ const Feeds = () => {
             <div className="w-full flex mt-3">
               <div className="flex gap-2 p-2 cursor-pointer justify-center rounded-lg w-[33%] hover:bg-gray-100">
                 {" "}
-                <VideoCallIcon sx={{color:"green"}} /> Video
+                <VideoCallIcon sx={{ color: "green" }} /> Video
               </div>
               <div className="flex gap-2 p-2 cursor-pointer justify-center rounded-lg w-[33%] hover:bg-gray-100">
                 {" "}
-                <InsertPhotoIcon sx={{color:"blue"}} /> Photo
+                <InsertPhotoIcon sx={{ color: "blue" }} /> Photo
               </div>
               <div className="flex gap-2 p-2 cursor-pointer justify-center rounded-lg w-[33%] hover:bg-gray-100">
                 {" "}
-                <ArticleIcon sx={{color:"orange"}} /> Article
+                <ArticleIcon sx={{ color: "orange" }} /> Article
               </div>
             </div>
           </Card>
         </div>
 
-        <div className="border-b-1 border-gray-400 w-[100%] my-5"/>
+        <div className="border-b-1 border-gray-400 w-[100%] my-5" />
 
-        <div className="w-full flex flex-col gap-5">g</div>
-
+        <div className="w-full flex flex-col gap-5">
+          <Post />
+          <Post />
+        </div>
       </div>
 
       {/* right side */}
@@ -79,7 +86,7 @@ const Feeds = () => {
               <div className="text-sm text-gray-400">2h ago</div>
             </div>
 
-                        <div className="my-1">
+            <div className="my-1">
               <div className="text-md">Foreign investments surge again</div>
               <div className="text-sm text-gray-400">3h ago</div>
             </div>
@@ -87,10 +94,13 @@ const Feeds = () => {
         </div>
 
         <div className="my-5 sticky top-19">
-          <Advertisement/>
+          <Advertisement />
         </div>
-
       </div>
+
+      <Modal title={"Add a post"} >
+        <AddModal/>
+      </Modal>
     </div>
   );
 };

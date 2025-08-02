@@ -84,11 +84,12 @@ const Navbar2 = () => {
         <div className="flex flex-col items-center cursor-pointer">
           <div>
             <NotificationsIcon
+            className="relative"
               sx={{
                 color: location.pathname === "/notification" ? "black" : "gray",
               }}
             />
-            <span className="p-1 rounded-full text-sm bg-red-700 text-white">1</span>
+            <span className="absolute top-0 w-4 h-6 text-center p-1 rounded-full text-sm bg-red-700 text-white">1</span>
           </div>
           <div className="text-sm text-gray-500">Notifications</div>
         </div>
